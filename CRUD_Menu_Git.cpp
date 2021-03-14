@@ -52,20 +52,6 @@ void registrar_libros(Tlibro &lista){
 	}	
 }
 
-/*void mostrar_libros(Tlibros mostrar){
-	
-	do{
-		cout<< "Mostrar libro";
-		cout << "Codigo: "<<mostrar->codigo>>endl;
-		cout << "Codigo: "<<mostrar->codigo>>endl;
-		cout << "Codigo: "<<mostrar->codigo>>endl;
-		cout << "Codigo: "<<mostrar->codigo>>endl;
-		
-	}
-	cout<<  <<endl;
-
-}*/
-
 
 void menu_opcion(void){
 		system ("color 9");//Para dar color al fondo de pantalla y los caracteres.
@@ -73,9 +59,7 @@ void menu_opcion(void){
 	cout<<" "<< endl;
 	cout<< "        MENU PRINCIPAL BIBLIOTECA"<< endl;
 	cout<<"       같같같같같같같같같같같같같"<< endl;
-	cout<<" "<< endl;
-	
-//	int opc;            
+	cout<<" "<< endl;        
 	
 		cout<<"	1. Registrar libros"<<endl;
 		cout<<"	2. Mostrar libros"<<endl;
@@ -87,7 +71,6 @@ void menu_opcion(void){
 		cout<<" "<<endl;
 		
 		cout<<"	Ingrese una opcion:"<<endl;
-		//cin>>opc;
 }
 
 int main(void){
@@ -95,37 +78,13 @@ int main(void){
 	Tlibro mostrar =NULL;
 	int opc;
 	system ("color 9");//Para dar color al fondo de pantalla y los caracteres.
-/*	//cout<<"          같같같같같같같같같같같같같같"<< endl;
-	cout<<" "<< endl;
-	cout<< "        MENU PRINCIPAL BIBLIOTECA"<< endl;
-	cout<<"       같같같같같같같같같같같같같"<< endl;
-	cout<<" "<< endl;
-	
-	int opc;            
-	
-	do{
-		cout<<"	1. Registrar libros"<<endl;
-		cout<<"	2. Mostrar libros"<<endl;
-		cout<<"	3. Actualizar libros"<<endl;
-		cout<<"	4. Eliminar libros"<<endl;
-		cout<<"	5. Buscar libros"<<endl;
-		cout<<"	6. Salir"<<endl;
-		cout<<"  	-------------------------"<< endl;
-		cout<<" "<<endl;
-		
-		cout<<"	Ingrese una opcion:"<<endl;
-		cin>>opc;*/
+
 		do{
 		menu_opcion();
 		cin >>opc;
 		
 		switch(opc){
 			case 1: registrar_libros(lista);
-				/*char guardar_libro[50];
-				cout<<"Introduce el titulo del libro a guardar"<<endl;
-				cin>>guardar_libro;*/
-				
-				cout<<lista<<endl;
 				cout<<"El libro "/*<<guardar_libro<<*/" se guardo con exito!!"<<endl; // SE DEBE GUARDAR EN DB
 				//cout<<" "<<endl;
 				system("pause");
