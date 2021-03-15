@@ -52,6 +52,21 @@ void registrar_libros(Tlibro &lista){
 	}	
 }
 
+void mostrar_libros(Tlibro mostrar){
+	int i =1;
+	while(mostrar!=NULL){
+		cout<< "Mostrar libro";
+		cout<< "Datos del libro "<<i<<"";
+		cout << "Codigo: "<<mostrar->codigo<<endl;
+		cout << "Codigo: "<<mostrar->nombres<<endl;
+		cout << "Codigo: "<<mostrar->descripcion<<endl;
+		cout << "Codigo: "<<mostrar->editorial<<endl;	
+		
+		mostrar= mostrar->siguiente,
+		i++;
+	}
+	//cout<<  <<endl;
+}
 
 void menu_opcion(void){
 		system ("color 9");//Para dar color al fondo de pantalla y los caracteres.
@@ -92,12 +107,9 @@ int main(void){
 		}
 		
 		switch(opc){
-			case 2: //mostrar_libros();
-				//CODIGO PARA MOSTAR LIBRO
-				//cout<<  <<endl;
-				
-				
-				break;
+			case 2: mostrar_libros(lista);
+			system("pause");	
+			break;
 		}
 		
 		switch(opc){
