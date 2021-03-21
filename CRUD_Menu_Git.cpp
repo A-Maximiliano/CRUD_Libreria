@@ -19,6 +19,7 @@ struct nodo{
 
 typedef struct nodo *Tlibro;
 
+//CODIGO PARA REGISTRAR LIBRO
 void registrar_libros(Tlibro &lista){
 	system ("cls");
 	system ("color F2");
@@ -52,6 +53,7 @@ void registrar_libros(Tlibro &lista){
 	}	
 }
 
+//CODIGO PARA MOSTRAR LIBRO
 void mostrar_libros(Tlibro mostrar){
 	int i =1;
 	while(mostrar!=NULL){
@@ -65,8 +67,123 @@ void mostrar_libros(Tlibro mostrar){
 		mostrar= mostrar->siguiente,
 		i++;
 	}
-	//cout<<  <<endl;
 }
+
+//CODIGO PARA ELIMINAR LIBRO
+void eliminar_libros (Tlibro eliminar){
+	int cod;
+	Tlibro t,q;
+	q=eliminar;
+	cout<< "Eliminar libro";
+	cout<< "Digitar codigo del libro: ";
+	cin>>cod;
+		while(q!=NULL){
+		if(q->codigo==cod){
+			if(q==eliminar)
+				eliminar=eliminar->siguiente;
+			else
+				t->siguiente=q->siguiente;
+				delete(q);
+				cout<<"Se elimino";	
+				return;
+			}else{
+				t=q;
+				q=q->siguiente;
+			}
+		}
+		if(q==NULL)
+		cout<<"Codigo incorrecto";
+}
+
+void buscar_libros(Tlibro buscar){
+	int cod;
+	Tlibro q;
+	q=buscar;
+	cout<<"\n\n\n\tBUSCAR LIBRO EN LA BIBLIOTECA";
+    cout<<"\n\n\tINGRESE EL CODIGO:"; cin>>cod;
+    while(q!=NULL){
+    if(q->codigo==cod){
+                system("cls");
+                cout<<"\n\tDATOS DEL LIBRO  ";
+                cout<<"\n\t--------------------";
+                cout<<"\n\n\tCODIGO   : "<<q->codigo<<endl;
+                cout<<"\n\tNOMBRE  : "<<q->nombres<<endl;
+                cout<<"\tDESCRIPCION: "<<q->descripcion<<endl;
+                cout<<"\tEDITORIAL: "<<q->editorial<<endl;
+                cout<<"\n";
+                break;
+    
+            }else {
+                q=q->siguiente;
+                //cout<<"\nLibro no encontrado\n"; break;
+        }
+}
+    
+	
+}
+
+
+
+//FUNCION PARA ACTUALIZAR UN DATO DEL LIBRO
+/*void menu_actualizar(void){
+ 
+    cout<<"\n\t\t[    ESPECIFIQUE EL CAMPO A ACTUALIZAR    ]\n";
+    cout<<"\t\t-------------------------------\n\n";
+    cout<<" 1. NOMBRE                        "<<endl;
+    cout<<" 2. DESCRIPCION                   "<<endl;
+    cout<<" 3. EDITORIAL                     "<<endl;
+    cout<<" 4. SALIR                         "<<endl;
+ 
+    cout<<"\n Ingrese opcion : ";
+}*/
+
+/*-------------------- FUNCION ACTUALIZAR LIBROS -------------------
+
+void actualizar_libros (TLibro lista){
+    int cod, x;
+    TLibro q;
+    q=lista;
+ 
+    cout<<"\n\n\n\tACTUALIZAR LIBRO DE LA BIBLIOTECA";
+    cout<<"\n\n\tINGRESE EL CODIGO:"; cin>>cod;
+    //mostrar_libros(TLibro cod);
+ 
+    while(q!=NULL){
+ 
+            if(q->codigo==cod){// 
+                system("cls");
+                cout<<"\n\tDATOS DEL LIBRO  ";
+                cout<<"\n\t--------------------";
+                cout<<"\n\n\tCODIGO   : "<<q->codigo<<endl;
+                cout<<"\n\tNOMBRE  : "<<q->nombres<<endl;
+                cout<<"\tDESCRIPCION: "<<q->descripcion<<endl;
+                cout<<"\tEDITORIAL: "<<q->editorial<<endl;
+                menu_actualizar();
+                cin>>x;
+                switch(x){
+ 
+                    case 1: cout<<"\n\n\tINGRESE EL NOMBRE:";
+                            cin.ignore(); cin.getline(q->nombres,maxchar);
+                            break;
+                    case 2: cout<<"\n\n\tINGRESE LA DESCRIPCION:";
+                            cin.ignore(); cin.getline(q->descripcion,maxchar);
+                            break;
+                    case 3: cout<<"\n\n\tINGRESE LA EDITORIAL:";
+                            cin.ignore(); cin.getline(q->editorial,maxchar);
+                            break;
+                    default: cout<<"\nINGRESE UNA OPCION VALIDA\n"; break;
+ 
+                }
+                cout<<"\n\n\tLIBRO ACTUALIZADO\n";
+                return;
+ 
+            }else {
+                q=q->siguiente;
+        }
+    }
+    if(q==NULL)
+        cout<<"\n\tCODIGO INCORRECTO\n";
+}*/
 
 void menu_opcion(void){
 		system ("color 9");//Para dar color al fondo de pantalla y los caracteres.
@@ -113,20 +230,20 @@ int main(void){
 		}
 		
 		switch(opc){
-			case 3:
-				//CODIGO PARA ACTUALIZAR LIBRO
+			case 3: //actualizar_libros(lista);
+			system("pause");
 				break;
 		}
 		
 		switch(opc){
-			case 4:
-				//CODIGO PARA ELIMINAR LIBRO
+			case 4:eliminar_libros(lista);
+			system("pause");
 				break;
 		}
 		
 		switch(opc){
-			case 5:
-				//CODIGO PARA BUSCAR LIBRO
+			case 5: buscar_libros(lista);
+			system("pause");
 				break;
 		}
 		
